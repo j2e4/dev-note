@@ -1,5 +1,22 @@
 # TypeScript
 
+## **타입스크립트 설치**
+글로벌로 설치
+```
+npm install -g typescript
+npm install -g ts-node
+```
+
+.ts파일을 .js파일로 컴파일
+```
+tsc fileName.ts
+```
+
+.ts파일을 바로 실행
+```
+ts-node fileName.ts
+```
+
 ## **변수 선언**
 
 ### boolean, number, string
