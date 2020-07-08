@@ -21,6 +21,8 @@ flex-wrap: nowrap; // 한 행에 나열(영역을 벗어나게 될 수 있다)
 ```css
 flex-flow: column wrap;
 /*
+    flex-direction flex-wrap 순서
+    
     1 2
     3 4
     5 6
@@ -34,3 +36,13 @@ white-space: nowrap;
 overflow: hidden;
 text-overflow: ellipsis;
 ```
+
+### 중앙 정렬하기
+```css
+display: flex;
+align-items: center;
+/* 또는 */
+display: inline-flex;
+align-items: center;
+```
+
