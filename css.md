@@ -46,3 +46,16 @@ display: inline-flex;
 align-items: center;
 ```
 
+### 가운데 정렬하기
+
+지금까지는 보통 <code>text-align: center;</code> 했는데 <br>
+<code>display: flex;</code> 스타일을 많이 쓰게 되면서 `text-align`으로 가운데 정렬 스타일이 적용이 안 되길래 찾아봤다.
+
+```css
+display: flex;
+justify-content: center;
+/* 또는 */
+display: inline-flex;
+justify-content: center;
+```
+
