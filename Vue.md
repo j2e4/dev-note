@@ -29,8 +29,8 @@
     ```
 
 ### const 변수로 선언하기
-싱글 파일 컴포넌트에서 상수
-[](https://coderethinked.com/3-different-ways-to-access-constants-in-a-vue-template/)
+싱글 파일 컴포넌트에서 상수  
+[3 different ways to access constants in a Vue template](https://coderethinked.com/3-different-ways-to-access-constants-in-a-vue-template/)
 1. data() 선언
 ```javascript
 data() {
