@@ -17,7 +17,7 @@ flex-wrap: wrap-reverse; // 복수 행에 역순으로 나열
 flex-wrap: nowrap; // 한 행에 나열(영역을 벗어나게 될 수 있다)
 ```
 
-### flex-flow 속성 (flex-direction flex-wrap의 shorthand)<br>
+### flex-flow 속성 (flex-direction flex-wrap의 shorthand)
 ```css
 flex-flow: column wrap;
 /*
@@ -48,8 +48,8 @@ align-items: center;
 
 ### 가운데 정렬하기
 
-지금까지는 보통 <code>text-align: center;</code> 했는데 <br>
-<code>display: flex;</code> 스타일을 많이 쓰게 되면서 `text-align`으로 가운데 정렬 스타일이 적용이 안 되길래 찾아봤다.
+지금까지는 보통 `text-align: center;` 했는데  
+`display: flex;` 스타일을 많이 쓰게 되면서 `text-align`으로 가운데 정렬 스타일이 적용이 안 되길래 찾아봤다.
 
 ```css
 display: flex;

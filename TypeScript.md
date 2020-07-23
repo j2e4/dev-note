@@ -102,10 +102,10 @@ function throwErrWithMsg (message : string) : never {
 ### `void` vs `never`
 이해가 어려워 조금 덧붙인다.
 
-> * void
-<br> 값을 반환하지 않는 함수의 타입
-> * never
-<br>[공식 문서](https://www.typescriptlang.org/docs/handbook/basic-types.html#never)에서 never type에 대해 설명한 부분을 보면 `unreachable`이라는 단어를 강조한다. 끝에 닿을 수 없는 변수(함수)를 설명하는 타입이라고 생각하면 될 것 같다.
+> * void  
+값을 반환하지 않는 함수의 타입
+> * never  
+[공식 문서](https://www.typescriptlang.org/docs/handbook/basic-types.html#never)에서 never type에 대해 설명한 부분을 보면 `unreachable`이라는 단어를 강조한다. 끝에 닿을 수 없는 변수(함수)를 설명하는 타입이라고 생각하면 될 것 같다.
 >   * 항상 Error를 던져 끝에 닿을 수 없는(return이 없는) 함수 => never
 >   * 무한 루프를 돌아 끝에 닿을 수 없는(return이 없는) 함수 => never
 

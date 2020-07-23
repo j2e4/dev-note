@@ -1,5 +1,5 @@
 # FullCalendar
-See the [FullCalendar Docs](https://fullcalendar.io/) for more details<br>
+See the [FullCalendar Docs](https://fullcalendar.io/) for more details  
 (개인적으로는 docs에서 필요한 기능을 찾는 것보다 키워드로 구글링하는 게 접근이 편했다)
 
 ## Calendar.vue
