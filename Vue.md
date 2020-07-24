@@ -61,3 +61,65 @@ created() {
     }
 }
 ```
+
+### Computed 변수 getter/setter 할당
+
+computed로 선언한 변수를 v-model 등 set할 수 있는 애트리뷰트에 사용했을 때  
+`Computed property was assigned to but it has no setter.`  
+변수가 assigned 됐지만 setter가 없다는 webstorm 힌트가 떴다.  
+computed 변수는 `기본적으로 getter-only`지만,  
+필요에 따라 `setter 지정이 가능`하다고 한다.  
+
+```javascript
+<template>
+    <div class="ex-computed-setter">
+        <div>
+            <BFormCheckbox
+                size="sm"
+                v-model="checked"
+                :options="season"
+            >
+                4계절 선택 여부
+            </BFormCheckbox>
+        </div>
+        <div>
+            <BFormCheckboxGroup
+                size="sm"
+                v-model="selection"
+                :options="season"
+            />
+        </div>
+    </div>
+</template>
+<script>
+    export default: {
+        data() {
+            return {
+                season: ['봄', '여름', '가을', '겨울'],
+                selection: ['봄', '가을']
+            }
+        },
+        computed: {
+            checked: {
+                get() {
+                    return this.season.every(ss => {
+                        return this.selection.includes(ss);
+                    })
+                },
+                set(checked) {
+                    if (checked) {
+                        this.season.forEach(ss => {
+                            this.selection.push(ss);
+                        })
+                    } else {
+                        this.selection = [];
+                    }
+                }
+            }
+            // 체크박스는 setter 선언을 이렇게 한다는 걸 정리하기 위한 예시일 뿐.. 좋은 예제는 아닌 것 같다.
+        }
+    }
+</script>
+```
+
+[For more details about Computed-Setter](https://vuejs.org/v2/guide/computed.html#Computed-Setter)
