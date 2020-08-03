@@ -1,5 +1,36 @@
 # CSS
 
+### flex
+container의 elements를 원하는 방향, 원하는 크기로 정렬할 수 있게 해준다.
+```html
+<div class="container">
+    <div class="element">a</div>
+    <div class="element">b</div>
+    <div class="element">c</div>
+</div>
+```
+```css
+.container {
+    display: inline-flex;
+    flex-direction: column;
+}
+/*
+    a
+    b
+    c
+*/
+```
+
+container에 적용: 
+ * display: flex, inline-flex
+ * flex-flow (flex-direction, flex-wrap)
+ * justify-content
+ * align-content
+ * align-items
+
+element에 적용:
+ * flex (flex-grow, flex-shrink, flex-basis)
+
 ### flex-direction 속성
 * global values: [inherit|initial|unset]
 ```css
@@ -28,6 +59,25 @@ flex-flow: column wrap;
     5 6
 */
 ```
+
+### flex 속성 (flex-grow flex-shrink flex-basis의 shorthand)
+```css
+flex: 0 1 auto;
+/*
+    same with flex: initial;
+    엘리먼트의 너비/높이에 따라 크기가 정해진다.
+    컨테이너의 크기를 넘기지 않기 위해 줄어들 순 있으나(flex-shrink: 1), 공간을 채우진 않는다(flex-grow: 0).
+*/
+```
+```css
+flex: 1 1 auto;
+/*
+    same with flex: auto;
+    엘리먼트의 너비/높이에 따라 크기가 정해진다.
+    컨테이너의 크기를 넘기지 않기 위해 줄어들 수 있고(flex-shrink: 1) 공간을 채우기 위해 늘어날 수 있다(flex-grow: 1).
+*/
+```
+
 
 ### 영역 밖의 글자 생략하기 (...)
 ```css
@@ -58,4 +108,3 @@ justify-content: center;
 display: inline-flex;
 justify-content: center;
 ```
-
