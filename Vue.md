@@ -123,3 +123,61 @@ computed 변수는 `기본적으로 getter-only`지만,
 ```
 
 [For more details about Computed-Setter](https://vuejs.org/v2/guide/computed.html#Computed-Setter)
+
+### mixins
+좀 더 공부를 해야겠지만, Interface Class같은 느낌이다.
+
+```javascript
+// WarningUtil.js
+export const WARNING_MIXINS = {
+    methods: {
+        getWarningString(e) {
+            return `DEFAULT ERROR => ${e.message}`;
+        }
+    }
+};
+```
+
+```javascript
+<template>
+    <div>
+        <div>
+            {{ warningMsg1 }}
+        </div>
+        <div>
+            {{ warningMsg2 }}
+        </div>
+    </div>
+</template>
+<script>
+    import * as WarningUtil from 'WarningUtil.js'
+
+    export default {
+        mixins: [WarningUtil.WARNING_MIXINS],
+        data() {
+            return {
+                error1: { code: 404, message: 'NOT FOUND' },
+                error2: { code: 500, message: 'Internal Server Error' }
+            };
+        },
+        computed: {
+            warningMsg1() {
+                return this.getWarningMsg(this.error1);
+            },
+            warningMsg2() {
+                return this.getWarningMsg(this.error2);
+            }
+        },
+        methods: {
+            getWarningMsg(err) {
+                if (err.code === 404)
+                    return `CUSTOM ERROR => ${err.message}`;
+
+                // mixins에서 불러오기.
+                // 덮어쓰기도 가능한 걸로 알고있음
+                return this.getWarningString(err);
+            }
+        }
+    }
+</script>
+```
