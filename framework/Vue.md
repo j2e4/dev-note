@@ -174,10 +174,11 @@ export const WARNING_MIXINS = {
                     return `CUSTOM ERROR => ${err.message}`;
 
                 // mixins에서 불러오기.
-                // 덮어쓰기도 가능한 걸로 알고있음
                 return this.getWarningString(err);
             }
         }
     }
 </script>
 ```
+[For more details about Mixins](https://vuejs.org/v2/guide/mixins.html#Basics)
+
